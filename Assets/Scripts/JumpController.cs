@@ -8,7 +8,7 @@ public class JumpController : MonoBehaviour
     public Transform FloorChecker;
     public LayerMask FloorLayer;
     private bool ContactFloor = true;
-    private readonly float jumpForce = 800;
+    private readonly float jumpForce = 1000;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +28,8 @@ public class JumpController : MonoBehaviour
         {
             Player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpForce);
         }
+
+        Player.GetComponent<Animator>().SetBool("Jumping", !ContactFloor);
     }
 
     void UpdateContactFloor()
