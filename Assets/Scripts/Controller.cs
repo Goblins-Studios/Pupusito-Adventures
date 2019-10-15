@@ -7,10 +7,6 @@ public class Controller : MonoBehaviour
     public GameObject pupusito;
 
     // Start is called before the first frame update
-    void Start ()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update ()
@@ -26,6 +22,11 @@ public class Controller : MonoBehaviour
         }
 
         if (Input.GetKeyUp(KeyCode.A) ||  Input.GetKeyUp(KeyCode.D))
+        {
+            Move.Instance.Nothing(pupusito);
+        }
+
+        if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A))
         {
             Move.Instance.Nothing(pupusito);
         }
