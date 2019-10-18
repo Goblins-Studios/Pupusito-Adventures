@@ -13,7 +13,7 @@ public class Move
             gameObject.GetComponent<SpriteRenderer>().flipX = false;
         }
         gameObject.GetComponent<Animator>().SetBool("To Walk", true);
-        gameObject.GetComponent<Transform>().Translate(Vector3.right * Time.deltaTime * 5);
+        gameObject.GetComponent<Transform>().Translate(Vector3.right * Time.deltaTime * 10);
     }
 
     public void ToLeft(GameObject gameObject)
@@ -23,7 +23,7 @@ public class Move
             gameObject.GetComponent<SpriteRenderer>().flipX = true;
         }
         gameObject.GetComponent<Animator>().SetBool("To Walk", true);
-        gameObject.GetComponent<Transform>().Translate(Vector3.left * Time.deltaTime * 5);
+        gameObject.GetComponent<Transform>().Translate(Vector3.left * Time.deltaTime * 10);
     }
 
     public void Nothing(GameObject gameObject)
