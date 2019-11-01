@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 1e076a594afa53449a41e1a0f402908c
+guid: d99ad978530117241ae120f31c6517d8
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Robot Enemy Walk Animation_0
-    21300002: Robot Enemy Walk Animation_1
+    21300000: Robot Enemy_0
+    21300002: Robot Enemy_1
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Robot Enemy Walk Animation_0
+      name: Robot Enemy_0
       rect:
         serializedVersion: 2
         x: 62
@@ -105,19 +105,19 @@ TextureImporter:
         width: 868
         height: 868
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: daa99a93018c0b345adc372b1889ba0e
+      spriteID: b1faccdbdca2405449914ef1702c87b4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Robot Enemy Walk Animation_1
+      name: Robot Enemy_1
       rect:
         serializedVersion: 2
         x: 1054
@@ -125,13 +125,13 @@ TextureImporter:
         width: 868
         height: 868
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d74f3b9956510294c8ded07f0c73bd5e
+      spriteID: 4a5335c91a2336d4182a7e1c46a83610
       vertices: []
       indices: 
       edges: []
@@ -139,7 +139,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 366ed599cad73a24da20f822134774f2
+    spriteID: b76598bba4286b949ba2745c28071960
     vertices: []
     indices: 
     edges: []

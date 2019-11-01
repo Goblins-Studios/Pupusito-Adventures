@@ -4,20 +4,29 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-    Character PupusitoGreen;
+   PlayableCharacter PupusitoGreen;
 
     public GameObject PupusitoGreenInstance;
-
-    public LayerMask FloorLayer;
 
     // Start is called before the first frame update
     void Start()
     {
-        PupusitoGreen = new Character(PupusitoGreenInstance);
+        PupusitoGreen = new PlayableCharacter(PupusitoGreenInstance);
+        InitiateMovement();
     }
 
     // Update is called once per frame
     void Update()
+    {
+        UpdateMovement();
+    }
+
+    void InitiateMovement()
+    {
+        StartCoroutine(PupusitoGreen.CheckContactFloor());
+    }
+
+    void UpdateMovement()
     {
         if (Input.GetKey(KeyCode.A))
         {
@@ -34,11 +43,11 @@ public class CharacterController : MonoBehaviour
             PupusitoGreen.Still();
         }
 
-        if (Input.GetKey(KeyCode.W) && PupusitoGreen.ContactFloor)
+        if (Input.GetKeyDown(KeyCode.W) && PupusitoGreen.ContactFloor)
         {
             PupusitoGreen.Jump();
         }
-        StartCoroutine(PupusitoGreen.CheckContactFloor(FloorLayer));
+
         PupusitoGreen.SetJumpingAnimation();
     }
 }
