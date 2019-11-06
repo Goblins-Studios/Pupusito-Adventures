@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayableCharacter : Character
+public class PlayerCharacter : Character
 {
     public int Lives { get; private set; }
 
-    public PlayableCharacter(GameObject Instance) : base(Instance)
+    public PlayerCharacter(GameObject Instance) : base(Instance)
     {
         Lives = 2;
     }

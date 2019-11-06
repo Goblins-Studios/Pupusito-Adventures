@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyIA
 {
-    Enemy Enemy;
+    EnemyCharacter Enemy;
     bool LookingRight = true;
 
     public bool EnemyUpdateMove()
@@ -20,7 +20,7 @@ public class EnemyIA
         return LookingRight;
     }
 
-    public EnemyIA(Enemy enemy)
+    public EnemyIA(EnemyCharacter enemy)
     {
         Enemy = enemy;
     }

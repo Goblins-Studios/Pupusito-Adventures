@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour
 {
-   PlayableCharacter PupusitoGreen;
+   PlayerCharacter PupusitoGreen;
 
     public GameObject PupusitoGreenInstance;
 
     // Start is called before the first frame update
     void Start()
     {
-        PupusitoGreen = new PlayableCharacter(PupusitoGreenInstance);
+        PupusitoGreen = new PlayerCharacter(PupusitoGreenInstance);
         InitiateMovement();
     }
 

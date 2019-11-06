@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Character
+public class EnemyCharacter : Character
 {
     protected Transform WallCheckerRight { get; set; }
     protected Transform WallCheckerLeft { get; set; }
@@ -20,7 +20,7 @@ public class Enemy : Character
         }
     }
 
-    public Enemy(GameObject Instance) : base (Instance)
+    public EnemyCharacter(GameObject Instance) : base (Instance)
     {
         // Busca Wall Checker Right en los hijos de la instancia
         for (int i = 0; i < Instance.GetComponent<Transform>().childCount; i++)

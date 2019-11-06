@@ -5,14 +5,14 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public GameObject EnemyGameObject;
-    Enemy enemy;
+    EnemyCharacter enemy;
     EnemyIA enemyIA;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        enemy = new Enemy(EnemyGameObject);
+        enemy = new EnemyCharacter(EnemyGameObject);
         enemyIA = new EnemyIA(enemy);
         InitiateIA();
     }
