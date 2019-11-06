@@ -4,16 +4,14 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public GameObject EnemyGameObject;
-    EnemyCharacter enemy;
-    EnemyIA enemyIA;
-
+    private List<EnemyCharacter> Enemies { get; set; }
+    private List<EnemyAI> EnemyIAs { get; set; }
 
     // Start is called before the first frame update
     void Start()
     {
-        enemy = new EnemyCharacter(EnemyGameObject);
-        enemyIA = new EnemyIA(enemy);
+        Enemies = new List<EnemyCharacter>();
+        EnemyIAs = new List<EnemyAI>();
         InitiateIA();
     }
 
@@ -25,18 +23,24 @@ public class EnemyController : MonoBehaviour
 
     void InitiateIA()
     {
-        StartCoroutine(enemy.CheckContactWall());
+        foreach (var enemy in Enemies)
+        {
+            StartCoroutine(enemy.CheckContactWall());
+        }
     }
 
     void UpdateIA()
     {
-        if (enemyIA.EnemyUpdateMove())
+        for (int i = 0; i < Enemies.Count; i++)
         {
-            enemy.MoveRight();
-        }
-        else
-        {
-            enemy.MoveLeft();
+            if (EnemyIAs[i].EnemyUpdateMove())
+            {
+                Enemies[i].MoveRight();
+            }
+            else
+            {
+                Enemies[i].MoveLeft();
+            }
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyIA
+public class EnemyAI
 {
     EnemyCharacter Enemy;
     bool LookingRight = true;
@@ -20,7 +20,7 @@ public class EnemyIA
         return LookingRight;
     }
 
-    public EnemyIA(EnemyCharacter enemy)
+    public EnemyAI(EnemyCharacter enemy)
     {
         Enemy = enemy;
     }
