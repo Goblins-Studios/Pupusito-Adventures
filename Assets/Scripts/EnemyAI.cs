@@ -7,7 +7,7 @@ public class EnemyAI
     EnemyCharacter Enemy;
     bool LookingRight = true;
 
-    public bool EnemyUpdateMove()
+    public bool EnemyCanMoveToRight()
     {
         if (Enemy.ContactWallRight && LookingRight)
         {

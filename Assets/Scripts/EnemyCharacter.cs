@@ -14,8 +14,8 @@ public class EnemyCharacter : Character
         WaitForFixedUpdate waitForFixedUpdate = new WaitForFixedUpdate();
         while (true)
         {
-            ContactWallRight = Physics2D.OverlapCircle(WallCheckerRight.position, 0.07f, LayerMask.GetMask("Brick"));
-            ContactWallLeft = Physics2D.OverlapCircle(WallCheckerLeft.position, 0.07f, LayerMask.GetMask("Brick"));
+            ContactWallRight = Physics2D.OverlapCircle(WallCheckerRight.position, 0.07f, LayerMask.GetMask("Brick", "Enemy"));
+            ContactWallLeft = Physics2D.OverlapCircle(WallCheckerLeft.position, 0.07f, LayerMask.GetMask("Brick", "Enemy"));
             yield return waitForFixedUpdate;
         }
     }
@@ -26,7 +26,9 @@ public class EnemyCharacter : Character
         for (int i = 0; i < Instance.GetComponent<Transform>().childCount; i++)
         {
             if (Instance.GetComponent<Transform>().GetChild(i).name == "Wall Checker Right")
+            { 
                 WallCheckerRight = Instance.GetComponent<Transform>().GetChild(i);
+            }
         }
 
         // Busca Wall Checker Left en los hijos de la instancia
