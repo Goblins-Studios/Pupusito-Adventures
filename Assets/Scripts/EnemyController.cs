@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         UpdateAI();
     }
@@ -39,11 +39,13 @@ public class EnemyController : MonoBehaviour
         {
             if (EnemyAIs[i].EnemyCanMoveToRight())
             {
-                Enemies[i].MoveRight();
+                // El argumento es 1 porque reperesenta a la derecha en el eje horizontal
+                Enemies[i].Move(1);
             }
             else
             {
-                Enemies[i].MoveLeft();
+                // El argumento es -1 porque reperesenta a la izquierda en el eje horizontal
+                Enemies[i].Move(-1);
             }
         }
     }

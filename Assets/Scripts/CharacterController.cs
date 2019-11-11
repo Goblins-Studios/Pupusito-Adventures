@@ -16,7 +16,7 @@ public class CharacterController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         UpdateMovement();
     }
@@ -28,22 +28,9 @@ public class CharacterController : MonoBehaviour
 
     void UpdateMovement()
     {
-        if (Input.GetKey(KeyCode.A))
-        {
-            PupusitoGreen.MoveLeft();
-        }
+        PupusitoGreen.Move(Input.GetAxis("Horizontal Player1"));
 
-        if (Input.GetKey(KeyCode.D))
-        {
-            PupusitoGreen.MoveRight();
-        }
-
-        if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.A))
-        {
-            PupusitoGreen.Still();
-        }
-
-        if (Input.GetKeyDown(KeyCode.W) && PupusitoGreen.ContactFloor)
+        if ((Input.GetAxis("Jump Player1") > 0) && PupusitoGreen.ContactFloor)
         {
             PupusitoGreen.Jump();
         }

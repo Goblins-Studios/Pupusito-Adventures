@@ -1,9 +1,6 @@
 ﻿using System;
 using UnityEngine;
 using System.Collections;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 public class Character
 {
@@ -13,29 +10,32 @@ public class Character
     protected readonly float Velocity = 15;
     protected readonly float JumpForce = 2000;
 
-    public void MoveRight()
+    public void Move(float horizontalAxis)
     {
-        if (Instance.GetComponent<SpriteRenderer>().flipX)
+        if (horizontalAxis > 0)
         {
-            Instance.GetComponent<SpriteRenderer>().flipX = false;
+            // Gira el sprite al lado derecho si no lo esta
+            if (Instance.GetComponent<SpriteRenderer>().flipX)
+            {
+                Instance.GetComponent<SpriteRenderer>().flipX = false;
+            }
+            Instance.GetComponent<Animator>().SetBool("To Walk", true);
         }
-        Instance.GetComponent<Animator>().SetBool("To Walk", true);
-        Instance.GetComponent<Transform>().Translate(Vector3.right * Time.deltaTime * Velocity);
-    }
-
-    public void MoveLeft()
-    {
-        if (!Instance.GetComponent<SpriteRenderer>().flipX)
+        else if (horizontalAxis < 0)
         {
-            Instance.GetComponent<SpriteRenderer>().flipX = true;
+            // Gira el sprite al lado izquierdo si no lo esta
+            if (!Instance.GetComponent<SpriteRenderer>().flipX)
+            {
+                Instance.GetComponent<SpriteRenderer>().flipX = true;
+            }
+            Instance.GetComponent<Animator>().SetBool("To Walk", true);
         }
-        Instance.GetComponent<Animator>().SetBool("To Walk", true);
-        Instance.GetComponent<Transform>().Translate(Vector3.left * Time.deltaTime * Velocity);
-    }
-
-    public void Still()
-    {
-        Instance.GetComponent<Animator>().SetBool("To Walk", false);
+        else
+        {
+            // Indica al animador que se esta sin mover el personaje
+            Instance.GetComponent<Animator>().SetBool("To Walk", false);
+        }
+        Instance.GetComponent<Transform>().Translate(new Vector2(horizontalAxis * Time.fixedDeltaTime * Velocity, 0));
     }
 
     public void Jump()
