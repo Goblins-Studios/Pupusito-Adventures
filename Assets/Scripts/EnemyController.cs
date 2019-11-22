@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour
         Enemies = new List<EnemyCharacter>();
         EnemyAIs = new List<EnemyAI>();
 
-        StartCoroutine(GenerateEnemy(Enemy, new List<Vector2> {new Vector2(-18, -17)}, new List<float> {3f, 1f, 3f}));
+        StartCoroutine(GenerateEnemy(Enemy, new List<Vector2> { new Vector2(-18, -17)}, new List<float> {3f, 1f, 3f}));
         InitiateAI();
     }
 
